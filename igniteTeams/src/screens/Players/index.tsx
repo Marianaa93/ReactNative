@@ -62,12 +62,11 @@ export function Player() {
         ]}
         showsVerticalScrollIndicator={false}
       />
-      {player.length !== 0 && (
-        <ButtonBTN
-          title='Deletar Time'
-          type='SECONDARY'
-        />
-      )}
+
+      <ButtonBTN
+        title='Deletar Time'
+        type='SECONDARY'
+      />
     </Styled.Container>
   );
 }
