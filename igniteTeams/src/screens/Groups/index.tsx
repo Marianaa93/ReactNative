@@ -6,9 +6,15 @@ import { useState } from "react";
 import { Button, FlatList } from "react-native";
 import { EmptyList } from "@components/EmptyList";
 import { ButtonBTN } from "@components/Button";
+import { useNavigation } from "@react-navigation/native";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
+
+  const navigation = useNavigation();
+  function handleSubmit() {
+    navigation.navigate("newGroup");
+  }
 
   return (
     <Styled.Container>
@@ -35,9 +41,7 @@ export function Groups() {
       />
       <ButtonBTN
         title='Criar Nova Turma'
-        onPress={() => {
-          console.log("clicado");
-        }}
+        onAdd={handleSubmit}
       />
     </Styled.Container>
   );

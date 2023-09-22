@@ -9,15 +9,24 @@ import { useState } from "react";
 import { PlayerCardComponent } from "@components/PlayerCardComponent";
 import { EmptyList } from "@components/EmptyList";
 import { ButtonBTN } from "@components/Button";
+import { useRoute } from "@react-navigation/native";
+
+type RouteParams = {
+  group: string;
+};
 
 export function Player() {
   const [team, setTeam] = useState("Time A");
   const [player, setplayer] = useState(["Mariana", "Rodrigo"]);
+  const route = useRoute();
+
+  const { group } = route.params as RouteParams;
+
   return (
     <Styled.Container>
       <Header showBackButton />
       <Highlight
-        title='Nome da turma'
+        title={group}
         subtitle='Adicione a galera e separe os times'
       />
       <Styled.Form>
@@ -66,6 +75,7 @@ export function Player() {
       <ButtonBTN
         title='Deletar Time'
         type='SECONDARY'
+        onAdd={() => {}}
       />
     </Styled.Container>
   );

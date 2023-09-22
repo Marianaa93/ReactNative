@@ -1,5 +1,6 @@
 import theme from "@theme/index";
 import { CaretLeft } from "phosphor-react-native";
+import { Touchable, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 
@@ -22,3 +23,5 @@ export const BackIcon = styled(CaretLeft).attrs(({ theme }) => ({
   color: theme.COLORS.WHITE,
   size: 32,
 }))``;
+
+export const buttonLogoHome = styled(TouchableOpacity)``;
